@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+
+{% if api %}
+
+    {% if api == "Error..." %}
+        There was problem help ....
+    {% else %}
+
+        <h1>{{ api.companyName}}</h1>
+        Price: ${{ api.latestPrice}}<br/>
+        Previous close: ${{ api.previousClose}}<br/>
+        Market cap: ${{ api.marketCap}}<br/>
+        YTD ch: {{ api.ytdChange}}<br/>
+        52High: {{ api.week52High }}<br/>
+        52HLow: {{ api.week52Low }}<br/>
+
+    {% endif %}
+
+{% else %}
+    do something
+{% endif %}
+
+
+
+
+{% endblock %}
+
+
