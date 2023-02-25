@@ -6,4 +6,3 @@ class Stock(models.Model):
     def __str__(self):
         return self.ticker
 
-# Create your models here.
